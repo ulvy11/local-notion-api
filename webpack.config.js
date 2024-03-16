@@ -3,6 +3,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 webpack = require("webpack");
+const nodeExternals = require("webpack-node-externals");
 require("dotenv").config();
 
 const isProduction = process.env.NODE_ENV == "production";
@@ -10,6 +11,7 @@ const isProduction = process.env.NODE_ENV == "production";
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
+  target: "node",
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -44,6 +46,7 @@ const config = {
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
   },
+  externals: [nodeExternals()],
 };
 
 module.exports = () => {
