@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ulvy11/local-notion-api/issues"
   },
-  "homepage": "https://github.com/ulvy11/local-notion-api#readme"
+  "homepage": "https://github.com/ulvy11/local-notion-api#readme",
+  "dependencies": {
+    "@notionhq/client": "^2.2.14"
+  }
 }
